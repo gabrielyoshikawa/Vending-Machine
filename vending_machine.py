@@ -29,7 +29,7 @@ def Troco():
 #Troco na menor quantidade possível de notas e moedas
     else:
         troco = valor_pago - preco
-        print(troco)
+        print("O seu troco é de: {0}".format(troco))
 
         notas_200 = troco // 200
         print("Notas de 200,00 Reais: {0}".format(notas_200))
@@ -122,11 +122,9 @@ def Estoque():
     else:
         print("ID não encontrado")
 
-
+#Roda o programa em loop
 verificacao = True
-
 while verificacao:
-
     user_choice = int(input("Selecione o id da bebida escolhida: "))
     Estoque()
     escolher_novamente = int(input("Deseja escolher outra bebida? Sim(1) Não(2): "))
