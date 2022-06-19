@@ -3,9 +3,6 @@ tabela = [['id', 'produto', 'valor', 'estoque'], [1, 'Coca-cola', 3.75, 2], [2, 
 for j in tabela:
     print (j)
 
-verificacao = True
-
-user_choice = int(input("Selecione o id da bebida escolhida: "))
 #Seleciona a bebida
 def Troco():
     if user_choice == 1:
@@ -32,6 +29,7 @@ def Troco():
 #Troco na menor quantidade possível de notas e moedas
     else:
         troco = valor_pago - preco
+        print(troco)
 
         notas_200 = troco // 200
         print("Notas de 200,00 Reais: {0}".format(notas_200))
@@ -92,44 +90,48 @@ def Estoque():
         else:
             print("O produto custa:", tabela[1][2], "Reais")
             tabela[1][3] -= 1
+            Troco()
     elif user_choice == 2:
         if tabela[2][3] == 0:
             print("Sem estoque")
         else:
             print("O produto custa:", tabela[2][2], "Reais")
             tabela[2][3] -= 1
+            Troco()
     elif user_choice == 3:
         if tabela[3][3] == 0:
             print("Sem estoque")
         else:
             print("O produto custa:", tabela[3][2], "Reais")
             tabela[3][3] -= 1
+            Troco()
     elif user_choice == 4:
         if tabela[4][3] == 0:
             print("Sem estoque")
         else:
             print("O produto custa:", tabela[4][2], "Reais")
             tabela[4][3] -= 1
+            Troco()
     elif user_choice == 5:
         if tabela[5][3] == 0:
             print("Sem estoque")
         else:
             print("O produto custa:", tabela[5][2], "Reais")
             tabela[5][3] -= 1
+            Troco()
     else:
         print("ID não encontrado")
 
-def EscolherNovamente():
+
+verificacao = True
+
+while verificacao:
+
+    user_choice = int(input("Selecione o id da bebida escolhida: "))
+    Estoque()
     escolher_novamente = int(input("Deseja escolher outra bebida? Sim(1) Não(2): "))
     if escolher_novamente == 1:
         verificacao = True
     else:
         verificacao = False
-
-while verificacao:
-
-    Estoque()
-    Troco()
-    EscolherNovamente()
  
-
