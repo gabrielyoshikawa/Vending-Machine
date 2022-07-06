@@ -1,2 +1,2 @@
-# Vending Machine Python
+# Vending Machine
  
